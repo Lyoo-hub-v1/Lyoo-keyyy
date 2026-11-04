@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYOO HUB KEY</title>
+<style>
+body{background:#1a1a1a;color:#fff;font-family:sans-serif;text-align:center;padding-top:60px}
+.box{background:#252525;width:90%;max-width:400px;margin:auto;padding:25px;border-radius:14px;border:1px solid #ff55aa}
+.key{background:#333;padding:15px;border-radius:8px;margin:15px 0;color:#ff55aa;font-weight:bold;font-size:18px}
+.btn{background:#ff55aa;color:white;padding:12px;border:none;border-radius:8px;width:100%;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="box">
+<h2 style="color:#ff55aa">LYOO HUB KEY</h2>
+<div class="key" id="keyBox">Loading...</div>
+<button class="btn" onclick="copyKey()">COPY KEY</button>
+<p style="font-size:11px;color:#888;margin-top:15px">Valid 24 Hours - Join Channel LYOO</p>
+</div>
+<script>
+const chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+function genKey(){
+  let rand=""; for(let i=0;i<6;i++) rand+=chars.charAt(Math.floor(Math.random()*chars.length));
+  let key="LYOO-FREE-"+rand;
+  document.getElementById("keyBox").innerText=key;
+}
+function copyKey(){
+  let k=document.getElementById("keyBox").innerText;
+  navigator.clipboard.writeText(k);
+  alert("Copied: "+k);
+}
+genKey();
+</script>
+</body>
+</html>
